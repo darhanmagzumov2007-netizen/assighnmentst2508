@@ -3,25 +3,33 @@ import models.Shape;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class MyApplication {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("/Users/a.khaimuldin/IdeaProjects/assignment1se2313/src/source");
 
+        File file = new File("src/source");
         Scanner sc = new Scanner(file);
+        sc.useLocale(Locale.US);
+        sc.useDelimiter("[,\\n\\r]+");
+
+
+
         Shape shape = new Shape();
 
-        while (sc.hasNext()) {
+        while (sc.hasNextDouble()) {
             double x = sc.nextDouble();
             double y = sc.nextDouble();
 
             Point point = new Point(x, y);
             shape.addPoint(point);
         }
+        sc.close();
 
         System.out.println(shape.calculatePerimeter());
         System.out.println(shape.getAverageSide());
-        System.out.println(shape.getLongest());
+        System.out.println(shape.getLongestSide());
     }
 }
+// submission
