@@ -11,8 +11,8 @@ public class Shape {
         points.add(p);
     }
 
-    // calculatePerimeter()
-    public double calculatePerimeter() {
+    // calculatePerimeterDarkhan()
+    public double calculatePerimeterDarkhan() {
         int n = points.size();
         if (n < 2) return 0.0;
 
@@ -24,14 +24,14 @@ public class Shape {
         }
         return perimeter;
     }
-    // getAverageSide()
-    public double getAverageSide() {
+    // getAverage()
+    public double getAverageDarkhan() {
         int n = points.size();
         if (n < 2) return 0.0;
-        return calculatePerimeter() / n;
+        return calculatePerimeterDarkhan() / n;
     }
-    // getLongestSide()
-    public double getLongestSide() {
+    // getLongest()
+    public double getLongestDarkhan() {
         int n = points.size();
         if (n < 2) return 0.0;
 

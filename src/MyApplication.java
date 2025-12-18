@@ -27,9 +27,9 @@ public class MyApplication {
         }
         sc.close();
 
-        System.out.println(shape.calculatePerimeter());
-        System.out.println(shape.getAverageSide());
-        System.out.println(shape.getLongestSide());
+        System.out.println(shape.calculatePerimeterDarkhan());
+        System.out.println(shape.getAverageDarkhan());
+        System.out.println(shape.getLongestDarkhan());
     }
 }
 // submission
