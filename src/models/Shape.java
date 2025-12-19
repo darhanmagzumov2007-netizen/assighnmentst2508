@@ -3,15 +3,15 @@ package models;
 import java.util.ArrayList;
 
 public class Shape {
-    // container of Points (e.g. ArrayList<Point>)
+
     private final ArrayList<Point> points = new ArrayList<>();
 
-    // addPoint(Point) - adds to the container
+
     public void addPoint(Point p) {
         points.add(p);
     }
 
-    // calculatePerimeterDarkhan()
+  
     public double calculatePerimeterDarkhan() {
         int n = points.size();
         if (n < 2) return 0.0;
@@ -24,13 +24,13 @@ public class Shape {
         }
         return perimeter;
     }
-    // getAverage()
+   
     public double getAverageDarkhan() {
         int n = points.size();
         if (n < 2) return 0.0;
         return calculatePerimeterDarkhan() / n;
     }
-    // getLongest()
+  
     public double getLongestDarkhan() {
         int n = points.size();
         if (n < 2) return 0.0;
