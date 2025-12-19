@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class MyApplication {
     public static void main(String[] args) throws FileNotFoundException {
 
-        File file = new File("src/source");
+        File file = new File("C:\Users\user\IdeaProjects\assighnmentst2508\src\MyApplication.java");
         Scanner sc = new Scanner(file);
         sc.useLocale(Locale.US);
         sc.useDelimiter("[,\\n\\r]+");
