@@ -14,7 +14,7 @@ public class MyApplication {
 
         Shape shape = new Shape();
 
-        while (sc.hasNextDouble()) {
+        while (sc.hasNext()) {
             double x = sc.nextDouble();
             double y = sc.nextDouble();
 
@@ -23,8 +23,8 @@ public class MyApplication {
         }
 
         System.out.println(shape.calculatePerimeter());
-        System.out.println(shape.getAverage());
-        System.out.println(shape.getLongest());
+        System.out.println(shape.getAverageSide());
+        System.out.println(shape.getLongestSide());
     }
 }
 

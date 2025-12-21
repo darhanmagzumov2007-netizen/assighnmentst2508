@@ -1,55 +1,76 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Shape {
 
-    private final ArrayList<Point> points = new ArrayList<>();
+    private List<Point> pointList = new ArrayList<>();
 
 
-    public void addPoint(Point p) {
-        points.add(p);
+    public void addPoint(Point point) {
+        pointList.add(point);
     }
 
 
     public double calculatePerimeter() {
-        int n = points.size();
-        if (n < 2) return 0.0;
+        double perimeter = 0;
+        int pointListSize = pointList.size();
 
-        double perimeter = 0.0;
-        for (int i = 0; i < n; i++) {
-            Point current = points.get(i);
-            Point next = points.get((i + 1) % n);
-            perimeter += current.distance(next);
+        for(int i = 0; i < pointListSize - 1; i++) {
+            Point a = pointList.get(i);
+            Point b = pointList.get(i + 1);
+
+            perimeter += a.distance(b);
         }
+
+        Point last = pointList.get(pointListSize - 1);
+        Point first = pointList.get(0);
+
+        perimeter += last.distance(first);
+
         return perimeter;
     }
 
-    public double getAverage() {
-        int n = points.size();
-        if (n < 2) return 0.0;
 
-        return calculatePerimeter() / n;
+    public double getAverageSide() {
+        return calculatePerimeter() / pointList.size();
     }
 
-    public double getLongest() {
-        int n = points.size();
-        if (n < 2) {
-            return 0.0;
-        }
 
+    public double getLongestSide() {
+        double longestSide = 0;
+        int pointListSize = pointList.size();
 
-        double longest = 0.0;
-        for (int i = 0; i < n; i++) {
-            Point current = points.get(i);
-            Point next = points.get((i + 1) % n);
-            double side = current.distance(next);
-            if (side > longest) {
-                longest = side;
+        for(int i = 0; i < pointListSize - 1; i++) {
+            Point a = pointList.get(i);
+            Point b = pointList.get(i + 1);
+
+            double distanceSide = a.distance(b);
+
+            if (longestSide < distanceSide) {
+                longestSide = distanceSide;
             }
         }
 
-        return longest;
+        Point last = pointList.get(pointListSize - 1);
+        Point first = pointList.get(0);
+
+        double distanceSide = last.distance(first);
+
+        if (longestSide < distanceSide) {
+            longestSide = distanceSide;
+        }
+
+        return longestSide;
+    }
+
+
+    public List<Point> getPointList() {
+        return pointList;
+    }
+
+    public void setPointList(List<Point> pointList) {
+        this.pointList = pointList;
     }
 }
-
